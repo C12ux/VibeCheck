@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-result.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="images/icon.svg" type="image/svg+xml">
+
+    <title>Quiz - Result</title>
+</head>
+<body>
+    <img src="images/swirl.png" class="swirl swirl-top-right" alt="Swirl">
+    <img src="images/swirl.png" class="swirl swirl-bottom-left" alt="Swirl">
+
+    <h1>Results</h1>
+    <p id="message">Sumakses si beshie q!</p>
+    <div class="result-container">
+        <canvas id="quizChart"></canvas>
+        <div class="score-container">
+            <h2>Score:</h2>
+            <p class="score"><span id="score">0</span>/20</p>
+            <hr style="border: 2px solid black; width: 90%; margin: 20px;">
+            <div class="correct-answers">
+                <span>Correct answers</span>
+                <button onclick="showCorrectAnswers()">▶</button>
+            </div>
+        </div>
+        <div class="next-button-container">
+            <button onclick="window.location.href='replay.html'" class="nxt-btn">Next</button>
+        </div>
+    </div>
+</body>
+<script type="module">
+    import questions from './questions.js';
+
+    const score = parseInt(localStorage.getItem("score"));
+    const userAnswers = JSON.parse(localStorage.getItem("answers"));
+
+    document.getElementById("score").textContent = score;
+    document.getElementById("message").textContent = score >= 17 ? "Sumakses si beshie" : "Galingan mo pa beshie";
+
+    generateQuizChart(score, 20 - score);
+
+    const container = document.querySelector(".correct-answers");
+    for (let i = 0; i < questions.length; i++) {
+        const div = document.createElement("div");
+        div.classList.add("correct-answer");
+        div.style.display = "none";
+        const correctIndex = parseInt(questions[i].answer);
+        div.textContent = `Q${i + 1}: ${questions[i].options[correctIndex]}`;
+        container.appendChild(div);
+    }
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Count Down</title>
+</head>
+
+<body id="ps-body">
+  <main>
+    <h1 id="timer">Ready?</h1>
+  </main>
+</body>
+<script>
+  const timerDisplay = document.getElementById("timer");
+
+  // Show "Ready" for 1 second
+  setTimeout(() => {
+    let timeLeft = 5;
+    timerDisplay.textContent = timeLeft;
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      if (timeLeft > 0) {
+        timerDisplay.textContent = timeLeft;
+      } else {
+        clearInterval(countdown);
+
+        // Go to question page
+      }
+    }, 1000);
+  }, 1000); // Delay before starting countdown
+</script>
+
+</html>

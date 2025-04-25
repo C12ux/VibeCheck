@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-q1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="images/icon.svg" type="image/svg+xml">
+
+    <title>Quiz Time! - <span id="page-number">1</span></title>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill"></div>
+    </div>
+
+    <div class="questions-main">
+        <h1>Question <span id="q-number">1</span></h1>
+        <div class="questions-container">
+          <p id="question-text">During Pinoy Big Brother Season 16, who was the first evicted duo?</p>
+        </div>
+        <div class="choices-top" id="choices-top">
+            <button class="choice" data-correct="false">Option 1</button>
+            <button class="choice" data-correct="false">Option 2</button>
+        </div>
+    
+        <div class="choices-bottom" id="choices-bottom">
+            <button class="choice" data-correct="false">Option 3</button>
+            <button class="choice" data-correct="false">Option 4</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.querySelectorAll(".choice").forEach(button => {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-correct") === "true") {
+                this.style.backgroundColor = "green"; // Highlight correct answer
+                this.style.color = "#fff"; // Make text readable
+
+                // Hide all incorrect choices
+                document.querySelectorAll(".choice").forEach(btn => {
+                    if (btn !== this) {
+                        btn.style.display = "none";
+                    }
+                });
+            } else {
+                this.style.backgroundColor = "red"; // Optional: Show incorrect answer
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("page-number").innerText = "1";
+    });
+</script>
+</html>

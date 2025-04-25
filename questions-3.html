@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-q3.css">
+    <title>Quiz Time! - Question<span id="page-number">1</span></title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="images/icon.svg" type="image/svg+xml">
+
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill"></div>
+    </div>
+
+    <div class="questions-main">
+        <h1>Question <span id="q-number">1</span></h1>
+
+        <div class="img-container">
+            <p>Look at this photo.</p>
+            <img src="images/retirement-plan.png" alt="question-image">
+        </div>
+
+        <div class="questions-container">
+          <p id="question-text">What do these famous personalities have in common?</p>
+        </div>
+        <div class="choices-top" id="choices-top">
+            <button class="choice" data-correct="false">Option 1</button>
+            <button class="choice" data-correct="false">Option 2</button>
+        </div>
+    
+        <div class="choices-bottom" id="choices-bottom">
+            <button class="choice" data-correct="true">Option 3</button>
+            <button class="choice" data-correct="false">Option 4</button>
+        </div>
+    </div>
+</body>
+<script>
+    let lastScrollTop = 0;
+const progressBar = document.querySelector('.progress-bar-container');
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down: Hide the progress bar (only moves up)
+        progressBar.style.transform = "translateY(-50px) translateX(-50%)"; 
+        progressBar.style.opacity = "0";
+    } else {
+        // Scrolling up: Show the progress bar again
+        progressBar.style.transform = "translateY(0) translateX(-50%)"; 
+        progressBar.style.opacity = "1";
+    }
+
+    lastScrollTop = currentScroll;
+});
+
+</script>
+</html>

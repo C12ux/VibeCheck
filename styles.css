@@ -1,0 +1,398 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.sacramento-regular {
+    font-family: "Sacramento", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.urbanist-regular{
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#landing-body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at bottom, #e7eef9 30%, #3A86FF 100%);
+    font-family: 'Sacramento', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+    z-index: 5;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Adjust height */
+    display: block; /* Remove extra space */
+    margin: 0 auto; /* Center SVG */
+    overflow: visible;
+}
+
+.vibe-check-text {
+    font-family: "Sacramento", cursive;
+    font-size: 15rem; /* Adjust font size */
+    font-weight: 500;
+    fill: #FB5607;
+    text-anchor: middle;
+    letter-spacing: 0.3rem;
+    dominant-baseline: central; /* Vertically align text */
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Hide the overflowing parts of the wheel */
+    position: relative; /* Needed for absolute positioning of children */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-end; /* Align items to the bottom */
+}
+
+.wheel-container{
+    position: absolute;
+    top: 15%; /* Stick to the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 1100px; /* or whatever width you need */
+    height: auto; /* Adjust as needed */
+    overflow: visible; /*  important to see when spinning */
+}
+
+.wheel{
+    width: 100%; /* Make the wheel fill the container */
+    height: auto;
+    transform-origin: center;
+    animation: spin 30s linear infinite; /* Your spin animation */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.button-box{
+    z-index: 10; /* Ensure visibility above other elements */
+    width: 250px; /* Adjusted width for responsiveness */
+    height: 250px; /* Explicit height for better rendering */
+    margin: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%; /* Positioned above the wheel */
+    left: 47%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.content {
+    z-index: 3;
+    height: 100px;
+    width: 250px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    transition: .5s;
+}
+
+h5 {
+    font-family: 'Urbanist', sans-serif;
+    top: 60%;
+    color: #ffffff;
+    position: absolute;
+    z-index: 5; /* Ensure text inside button box is above other elements */
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    background: rgba(77, 73, 73, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    margin-bottom: 1rem;
+    visibility: hidden;
+    opacity: 0;
+}
+
+button {
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Urbanist', sans-serif;
+    background-color: #FF3D7B;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 4; /* Ensure the button is on top of everything */
+}
+
+button:hover {
+    background-color: #791d3a;
+}
+
+.button-box:hover{
+    cursor: pointer;
+}
+
+.button-box:hover .content{
+    height: 250px;
+}
+
+.button-box:hover h5{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.star-cluster {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: sparkle 2.5s ease-in-out infinite;
+}
+
+/* Left cluster */
+.star-cluster.left {
+    top: 50%;
+    left: -5%;
+}
+
+/* Right cluster */
+.star-cluster.right {
+    top: 10%;
+    right: 0%;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+}
+
+/* Add these media queries at the bottom of your CSS */
+@media (max-width: 768px) {
+    .wheel-container {
+        width: 90%;
+        top: 50%; /* Center vertically */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Perfect center */
+    }
+
+    .button-box {
+        width: 200px;
+        height: 200px;
+        top: 50%; /* Center vertically */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Perfect center */
+        margin: 0; /* Remove previous margin */
+    }
+
+    .content {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wheel-container {
+        width: 95%;
+    }
+
+    .button-box {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .star-cluster {
+        animation: sparkle 1.8s ease-in-out infinite; /* Faster sparkle */
+    }
+
+    .star-cluster.left {
+        top: 40%;
+        left: 5%;
+        width: 120px;
+        animation-delay: 0.5s; /* Staggered animation */
+    }
+
+    .star-cluster.right {
+        top: 15%;
+        right: 5%;
+        width: 120px;
+        animation-delay: 1s;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-cluster {
+        width: 80px !important; /* Force smaller size */
+        animation-duration: 1.2s; /* Even faster sparkle */
+    }
+
+    .star-cluster.left {
+        top: 35%;
+        left: 2%;
+    }
+
+    .star-cluster.right {
+        top: 10%;
+        right: 2%;
+    }
+}
+
+/* Enhanced sparkle animation */
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+}
+
+@media (max-width: 768px) {
+    .vibe-check-text {
+        font-size: 8rem; /* Reduce for smaller screens */
+    }
+
+    svg {
+        max-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vibe-check-text {
+        font-size: 6rem; /* Further reduce */
+    }
+
+    svg {
+        max-height: 150px;
+    }
+}
+
+/*################################# Timer ######################################*/
+#ps-body{
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at bottom, #7eafe7 1%, #94e6c4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+#timer {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(2rem, 5vw, 5rem);
+    text-align: center;
+    margin-top: 5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    #ps-body {
+        flex-direction: column;
+        padding: 20px;
+    }
+    #timer {
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+}

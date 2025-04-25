@@ -1,0 +1,176 @@
+.sacramento-regular {
+    font-family: "Sacramento", cursive;
+    font-style: normal;
+}
+  
+.urbanist-regular{
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    background: radial-gradient(circle at bottom, #ff8585 1%, #94e6c4 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+}
+
+.star-cluster {
+    position: absolute;
+    width: 23vw;
+    height: auto;
+    pointer-events: none;
+    opacity: 0.9;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+/* Left cluster */
+.star-cluster.left {
+    top: 5%;
+    left: 2vw;
+}
+
+/* Right cluster */
+.star-cluster.right {
+    top: 50%;
+    right: 2vw;
+}
+
+h2{
+    color: #ffffff;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 4vw;
+    font-weight: light;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+h1{
+    color: #ffffff;
+    font-family: "Sacramento", cursive;
+    font-size: 8vw;
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    margin-top: 2rem;
+}
+
+.button-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 5vw;
+}
+
+button{
+    width: 12vw;
+    height: 8vh;
+    font-size: 1.8vw;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff006E;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+    background-color: rgb(54, 52, 52);
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-7px);
+    box-shadow: 5px 5px 5px #94e6c4;
+}
+
+@media (max-width: 1024px) {
+    button {
+        width: 14vw;
+        height: 9vh;
+        font-size: 2vw;
+    }
+    .button-container {
+        gap: 4vw; /* Adjusts spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    button {
+        width: 30vw;
+        height: 8vh;
+        font-size: 2.5vw;
+        border-radius: 3rem;
+    }
+    .button-container {
+        gap: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        width: 30vw;
+        height: 8vh;
+        font-size: 3.5vw;
+        border-radius: 2rem;
+    }
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .star-cluster {
+        width: 20vw; /* Increase size slightly */
+    }
+}
+
+@media (max-width: 768px) {
+    .star-cluster {
+        width: 25vw; /* Adjust for tablets */
+    }
+    .star-cluster.left {
+        top: 7%;
+        left: 3vw;
+    }
+    .star-cluster.right {
+        top: 70%;
+        right: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-cluster {
+        width: 30vw; /* Bigger for smaller screens */
+    }
+    .star-cluster.left {
+        top: 10%;
+        left: 5vw;
+    }
+    .star-cluster.right {
+        top: 75%;
+        right: 5vw;
+    }
+}

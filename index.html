@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>VibeCheck</title>
+</head>
+<body id="landing-body">
+    <div class="title">
+        <svg viewBox="0 0 1200 500">
+            <path id="curve" d="M 100 250 A 550 300 0 0 1 1100 250" fill="transparent"/>
+            <text>
+                <textPath href="#curve" startOffset="50%" class="vibe-check-text">Vibe Check</textPath>
+            </text>
+        </svg>
+    </div>
+    
+    <main class="container">
+        <div class="wheel-container">
+            <img src="images/wheel.png" alt="wheel" class="wheel">
+        </div>
+        <div class="button-box">
+            <div class="content">
+                <h5>Updated ka ba teh?</h5>
+                <button id="start">play</button>
+            </div>
+        </div>  
+    </main>
+    
+    <img src="images/sparkles.png" alt="sparkles-left" class="star-cluster left">
+    <img src="images/sparkles.png" alt="sparkles-right" class="star-cluster right">
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
