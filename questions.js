@@ -38,7 +38,7 @@ const questions = [
             "Married/In a relationship with famous people"
         ],
         answer: "0",
-        picture: "./images/retirement-plan.png"
+        picture: "./images/retirement plan.png"
     },   
     {
         question: "Who is the famous Korean actor facing backlash after being linked to the late actress Kim Sae-ron?",
@@ -59,7 +59,7 @@ const questions = [
             "Hachiko"
         ],
         answer: "2",
-        picture: "./images/doge.avif"
+        picture: "./images/doge.png"
     },   
     {
         question: "What is the name of Ariana Grande's character in the film Wicked?",
@@ -130,7 +130,7 @@ const questions = [
             "Meowgroove Shuffle"
         ],
         answer: "1",
-        picture: "./images/spinning cat.jpg"
+        picture: "./images/spinning cat.png"
     },   
     {
         question: "Mika Salamanca was pronounced the ____ flag after receiving the lowest number of votes in PBB.",
@@ -192,7 +192,7 @@ const questions = [
             "Maxwell"
         ],
         answer: "0",
-        picture: "./images/el gato.webp"
+        picture: "./images/el gato.png"
     },   
     {
         question: "Which fast food chain has a Sanrio Characters Wonder Wheel blind box collection?",
