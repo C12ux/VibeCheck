@@ -9,8 +9,10 @@ let score = 0;
 let questionNumber = 0;
 let answers = [];
 
+(localStorage.getItem("replay") !== null && localStorage.getItem("replay") === "yes") ? quizLoop() : null
+
 // Quiz loop
-start.addEventListener('click', async () => {
+async function quizLoop() {
     removeContent();
 
     title.innerText = "Count Down";
@@ -28,7 +30,9 @@ start.addEventListener('click', async () => {
 
     // Proceed to questions after countdown
     serveQuestions(questionNumber);
-});
+}
+
+start.addEventListener('click', quizLoop);
 
 // Make a Promise for setTimeout so we can execute this in async
 function timer() {
