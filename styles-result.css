@@ -212,127 +212,246 @@ hr {
     box-shadow: 0px 15px 20px #8338EC;
 }
 
-@media (max-width: 768px) {
+
+/* -- RESPONSIVE MEDIA QUERIES START HERE -- */
+
+/* For tablets and smaller laptops (between 768px and 1024px) */
+@media screen and (max-width: 1024px) {
     h1 {
         font-size: 50px;
+    }
+
+    .score-container {
+        font-size: 24px;
+        margin-top: 3rem;
+    }
+
+    .score-container h2,
+    .score {
+        font-size: 28px;
+    }
+
+    #score {
+        font-size: 70px;
+    }
+
+    .nxt-btn {
+        font-size: 2.5vw;
+    }
+
+    .swirl {
+        width: 25vw;
+    }
+
+    #quizChart {
+        max-width: 200px;
+    }
+}
+
+/* For mobile devices (below 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1rem;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .result-container {
+        flex-direction: column;
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .score-container {
+        align-items: center;
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 20px;
+    }
+
+    .score-container h2,
+    .score {
+        font-size: 24px;
+    }
+
+    #score {
+        font-size: 60px;
+    }
+
+    #quizChart {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .correct-answers {
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    .correct-answers button {
+        font-size: 25px;
+    }
+
+    .next-button-container {
+        position: static;
+        margin-top: 2rem;
+        width: 60%;
+        height: 50px;
+    }
+
+    .nxt-btn {
+        font-size: 4vw;
+    }
+
+    .swirl {
+        width: 30vw;
+    }
+
+    .swirl-bottom-left {
+        bottom: -80px;
+        left: 5px;
+    }
+}
+
+/* For very small devices (below 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 30px;
     }
 
     p {
         font-size: 1rem;
     }
 
-    .swirl {
-        width: 200px;
-    }
-
-    .result-container {
-        flex-direction: column;
-        width: 90%;
-        padding: 1rem;
-    }
-
-    #quizChart {
-        max-width: 200px;
+    .nxt-btn {
+        font-size: 5vw;
     }
 
     .score-container {
-        font-size: 20px;
-        text-align: flex-start;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-top: 2rem;
+        font-size: 18px;
     }
 
-    #score {
-        font-size: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 40px;
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
-
-    .swirl {
-        width: 150px;
-    }
-
-    .score-container h2 {
-        font-size: 25px;
-    }
-
+    .score-container h2,
     .score {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     #score {
         font-size: 50px;
     }
-}
 
-@media (max-width: 768px) {
+    .correct-answers {
+        font-size: 18px;
+    }
+
+    #quizChart {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
     .swirl {
-        width: 40vw; /* Adjusts for smaller screens */
-    }
-    .swirl-bottom-left {
-        bottom: -15vw;
-        left: -20vw;
-    }
-    .swirl-top-right {
-        bottom: -10vw;
-        left: 60vw;
+        width: 35vw;
     }
 }
 
-@media (max-width: 480px) {
-    .swirl {
-        width: 50vw;
+/* For very large screens (above 1440px) */
+@media screen and (min-width: 1440px) {
+    h1 {
+        font-size: 90px;
     }
-    .swirl-bottom-left {
-        bottom: -20vw;
-        left: -20px;
-    }
-    .swirl-top-right {
-        bottom: -10vw;
-        left: 70vw;
-    }
-}
 
-@media (max-width: 1024px) {
-    .next-button-container {
-        width: 20vw;
-        height: 8vh;
+    p {
+        font-size: 2rem;
     }
+
+    .score-container {
+        font-size: 35px;
+    }
+
+    .score-container h2,
+    .score {
+        font-size: 40px;
+    }
+
+    #score {
+        font-size: 120px;
+    }
+
     .nxt-btn {
-        font-size: 2.5vw;
-        border-radius: 4rem;
+        font-size: 1.5vw;
     }
 }
 
-@media (max-width: 768px) {
-    .next-button-container {
+/* Responsive adjustments for SWIRLS */
+
+/* For tablets and smaller laptops */
+@media screen and (max-width: 1024px) {
+    .swirl {
+        width: 25vw; /* slightly bigger because screen is smaller */
+    }
+
+    .swirl-bottom-left {
+        bottom: -100px;
+        left: 10px;
+    }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+    .swirl {
         width: 30vw;
-        height: 10vh;
-        bottom: 1vh;
-        right: 3vw;
     }
-    .nxt-btn {
-        font-size: 3vw;
+
+    .swirl-top-right {
+        top: 4vw;
+        right: 4vw;
+    }
+
+    .swirl-bottom-left {
+        bottom: -70px;
+        left: 5px;
     }
 }
 
-@media (max-width: 480px) {
-    .next-button-container {
-        width: 40vw;
-        height: 12vh;
-        bottom: 0.5vh;
-        right: 5vw;
+/* For very small devices */
+@media screen and (max-width: 480px) {
+    .swirl {
+        width: 35vw;
     }
-    .nxt-btn {
-        font-size: 4vw;
+
+    .swirl-top-right {
+        top: 6vw;
+        right: -15vw;
+    }
+
+    .swirl-bottom-left {
+        bottom: -50px;
+        left: 3px;
+    }
+}
+
+/* For very large screens */
+@media screen and (min-width: 1440px) {
+    .swirl {
+        width: 18vw;
+    }
+
+    .swirl-top-right {
+        top: 1.5vw;
+        right: 1.5vw;
+    }
+
+    .swirl-bottom-left {
+        bottom: -150px;
+        left: 20px;
     }
 }
