@@ -15,8 +15,14 @@
     <h2>Game Over</h2>
     <h1>Play Again?</h1>
     <div class="button-container">
-        <button onclick="window.location.href='index.html'">Yes</button>
+        <button id="yes">Yes</button>
         <button onclick="window.location.href='landing-page.html'">No</button>
     </div>
+    <script>
+        document.querySelector("#yes").addEventListener("click", () => {
+            localStorage.clear();
+            window.location.href = "./index.html"
+        })
+    </script>
 </body>
 </html>
