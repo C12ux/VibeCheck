@@ -152,21 +152,7 @@ const serveQuestions = (questionNumber) => {
 
         body.style.height = "100%";
 
-        window.addEventListener('scroll', function () {
-            let currentScroll = window.scrollY;
-
-            if (currentScroll > lastScrollTop) {
-                // Scrolling down: Hide the progress bar (only moves up)
-                progressBar.style.transform = "translateY(-50px) translateX(-50%)";
-                progressBar.style.opacity = "0";
-            } else {
-                // Scrolling up: Show the progress bar again
-                progressBar.style.transform = "translateY(0) translateX(-50%)";
-                progressBar.style.opacity = "1";
-            }
-
-            lastScrollTop = currentScroll;
-        });
+        
     } else if ("extra" in questions[questionNumber]) {
         insertQuestion(`
             <div class="questions-main">
@@ -213,10 +199,23 @@ const serveQuestions = (questionNumber) => {
         body.style.height = "100vh";
     }
 
-    let lastScrollTop = 0;
-    const progressBar = document.querySelector('.progress-bar-container');
+    window.addEventListener('scroll', function () {
+        let currentScroll = window.scrollY;
+        let lastScrollTop = 0;
+        const progressBar = document.querySelector('.progress-bar-container');
 
-    console.log(answers);
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down: Hide the progress bar (only moves up)
+            progressBar.style.transform = "translateY(-50px) translateX(-50%)";
+            progressBar.style.opacity = "0";
+        } else {
+            // Scrolling up: Show the progress bar again
+            progressBar.style.transform = "translateY(0) translateX(-50%)";
+            progressBar.style.opacity = "1";
+        }
+
+        lastScrollTop = currentScroll;
+    });
 
     document.querySelector(".progress-bar-fill").style.width = `${(questionNumber / 20) * 100}%`;
     const choiceButtons = document.querySelectorAll(".choice");
