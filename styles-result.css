@@ -340,24 +340,13 @@ hr {
 }
 
 /* For extra large screens (≥ 1400px) */
-@media (min-width: 1400px) {    
+@media (min-width: 1400px) {
     h1 {
         font-size: 90px;
     }
 
     p {
         font-size: 2rem;
-    }
-
-    .result-container {
-        padding: 0;
-        margin: 0;
-        height: 100vh; /* Full viewport height */
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Centers vertically */
-        align-items: center;   /* Centers horizontally */
-        width: 90vw;
     }
 
     .score-container h2,
@@ -384,6 +373,11 @@ hr {
     p {
         font-size: 2rem;
     }
+
+    .score-container {
+        font-size: 35px;
+    }
+
     .score-container h2,
     .score {
         font-size: 40px;
@@ -395,37 +389,6 @@ hr {
 
     .nxt-btn {
         font-size: 1.5vw;
-    }
-
-    .result-container {
-        max-width: 900px; /* slightly smaller so it doesn't look stretched */
-        padding: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    #quizChart {
-        max-width: 200px;
-        max-height: 200px;
-        width: 180px;
-        height: 180px;
-        margin: 2rem;
-    }
-
-    .score-container {
-        font-size: 35px;
-        margin-top: 3rem;
-    }
-
-    .next-button-container {
-        bottom: 6vh;
-        right: 50%;
-        transform: translateX(50%);
-        width: 250px; /* fixed pixel width for stability on very large screens */
-        height: 65px;
-    }
-
-    .nxt-btn {
-        font-size: 24px; /* bigger text */
     }
 }
 
