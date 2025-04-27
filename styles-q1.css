@@ -80,6 +80,7 @@ body {
     width: 90%;
     max-width: 800px;
     height: 270px;
+    max-height: 330;
     background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
