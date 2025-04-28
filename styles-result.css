@@ -372,6 +372,10 @@ hr {
     .nxt-btn {
         font-size: 1.5vw;
     }
+
+    .next-button-container{
+        right: 20%;
+    }
 }
 
 /* For very large screens (above 1440px) */
@@ -408,6 +412,10 @@ hr {
 
     .score-container {
         font-size: 35px;
+    }
+
+    .next-button-container{
+        right: 25%;
     }
 }
 
