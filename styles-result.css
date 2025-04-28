@@ -62,7 +62,7 @@ p{
 
 .swirl-bottom-left {
     position: absolute;
-    bottom: -130px;
+    bottom: -150px;
     left: 10px;
     z-index: 10;
     display: inline-block;
@@ -183,7 +183,7 @@ hr {
 .next-button-container{
     position: absolute; 
     bottom: 8vh;
-    right: 6.5vw;
+    right: 8.5vw;
     width: 15vw;
     height: 6vh;
     display: flex;
@@ -214,8 +214,6 @@ hr {
 
 
 /* -- RESPONSIVE MEDIA QUERIES START HERE -- */
-
-/* --- Responsive Styles --- */
 
 /* For tablets and smaller devices (≤ 992px) */
 @media (max-width: 992px) {
@@ -269,11 +267,15 @@ hr {
 /* For mobile devices (≤ 600px) */
 @media (max-width: 600px) {
     body{
-        width: 100vw;
-        height: 100vh;
-        overflow-x: hidden;
         padding: 0;
         margin: 0;
+        width: 100vw;
+        height: 100vh; /* Full viewport height */
+        overflow-x: hidden;
+        display: flex; /* Enables flexbox layout */
+        flex-direction: column; /* Optional if you want elements stacked */
+        justify-content: center; /* Aligns vertically */
+        align-items: center; /* Aligns horizontally */
     }
 
     h1 {
@@ -285,11 +287,14 @@ hr {
     }
 
     .result-container {
+        padding: 0;
+        margin: 0;
+        height: 100vh; /* Full viewport height */
         display: flex;
         flex-direction: column;
-        width: 90%;
-        margin: auto;
-        padding: 1rem;
+        justify-content: center; /* Centers vertically */
+        align-items: center;   /* Centers horizontally */
+        width: 90vw;
     }
 
     .score-container {
@@ -331,48 +336,6 @@ hr {
 
     .nxt-btn {
         font-size: 5vw;
-    }
-}
-
-@media (max-width: 480px) {
-
-    body{
-        width: 100vw;
-        height: 100vh;
-        overflow-x: hidden;
-        padding: 0;
-        margin: 0;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
-
-    .swirl {
-        width: 150px;
-    }
-
-    .result-container {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-    }
-
-
-    .score-container h2 {
-        font-size: 25px;
-    }
-
-    .score {
-        font-size: 30px;
-    }
-
-    #score {
-        font-size: 50px;
     }
 }
 
