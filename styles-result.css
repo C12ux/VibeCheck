@@ -349,15 +349,14 @@ hr {
         font-size: 2rem;
     }
 
-    .result-container {
-        padding: 0;
-        margin: 0;
-        height: 100vh; /* Full viewport height */
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Centers vertically */
-        align-items: center;   /* Centers horizontally */
-        width: 90vw;
+    .result-container{
+        width: 80%;
+    }
+
+    #quizChart {
+        width: 200px;
+        height: 200px;
+        margin: 2rem;
     }
 
     .score-container h2,
@@ -398,14 +397,12 @@ hr {
     }
 
     .result-container {
-        max-width: 80%; 
+        width: 80%; 
     }
 
     #quizChart {
-        max-width: 200px;
-        max-height: 200px;
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         margin: 2rem;
     }
 
