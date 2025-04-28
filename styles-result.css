@@ -398,16 +398,14 @@ hr {
     }
 
     .result-container {
-        max-width: 80%; /* slightly smaller so it doesn't look stretched */
-        padding: 2rem;
-        margin-bottom: 3rem;
+        max-width: 80%; 
     }
 
     #quizChart {
         max-width: 200px;
         max-height: 200px;
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
         margin: 2rem;
     }
 
